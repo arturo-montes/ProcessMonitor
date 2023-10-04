@@ -40,4 +40,7 @@
   <ItemGroup>
     <Folder Include="Functions\HttpTriggers\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProcessMonitor.Application\ProcessMonitor.Application.csproj" />
+  </ItemGroup>
 </Project>
