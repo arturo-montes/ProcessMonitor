@@ -16,6 +16,7 @@ namespace ProcessMonitor.ApiMonitorFunctions.Functions.QueueProcessing
         [Function(nameof(ProcessApiQueueItem))]
         public void Run([QueueTrigger("api-queue-items", Connection = "StorageConnectionString")] QueueMessage message)
         {
+
             _logger.LogInformation($"C# Queue trigger function processed: {message.MessageText}");
         }
     }
