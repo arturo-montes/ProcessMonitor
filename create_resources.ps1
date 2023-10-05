@@ -6,8 +6,8 @@
 # Variable for resource group name
 $resourceGroupName="SunocoProcessMonitor-RG"
 $location="Central US"
-$storageName="processmonitors1"
-$functionName="processmonitorf1"
+$storageName="processstorage1"
+$functionName="processfunction1"
 
 # login into azure
 az login
@@ -16,6 +16,7 @@ az login
 az group create --name $resourceGroupName --location $location
 
 # create storage
+# Disabled Allow cross-tenant replication
 az storage account create --name $storageName --location $location --resource-group $resourceGroupName --sku Standard_LRS --allow-blob-public-access false --bypass AzureServices --default-action Allow --min-tls-version TLS1_2
 
 # Display valid zone locations
