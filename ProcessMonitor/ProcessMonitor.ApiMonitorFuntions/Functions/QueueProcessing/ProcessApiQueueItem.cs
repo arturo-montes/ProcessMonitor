@@ -2,21 +2,21 @@ using Azure.Storage.Queues.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using ProcessMonitor.Application.Contracts;
-using ProcessMonitor.Application.Features.QueueMessage.Commands;
+using ProcessMonitor.Application.Features.QueueMessage.Commands.Process;
 
 namespace ProcessMonitor.ApiMonitorFunctions.Functions.QueueProcessing;
 
 public class ProcessApiQueueItem
 {
     private readonly ILogger<ProcessApiQueueItem> _logger;
-    private readonly IProcessQueueMessageHandler _processQueueMessageHandler;
+    private readonly IProcessQueueMessageCommandHandler _processQueueMessageCommandHandler;
 
     public ProcessApiQueueItem(ILogger<ProcessApiQueueItem> logger,
-        IProcessQueueMessageHandler processQueueMessageHandler,
+        IProcessQueueMessageCommandHandler processQueueMessageCommandHandler,
         ICreateStorageTablesCommandHandler createStorageTablesCommand)
     {
         _logger = logger;
-        _processQueueMessageHandler = processQueueMessageHandler;
+        _processQueueMessageCommandHandler = processQueueMessageCommandHandler;
         createStorageTablesCommand.Handle();
     }
 
@@ -24,7 +24,7 @@ public class ProcessApiQueueItem
     [Function(nameof(ProcessApiQueueItem))]
     public void Run([QueueTrigger("api-queue-items", Connection = "StorageConnectionString")] QueueMessage message)
     {
-        _processQueueMessageHandler.Handle(new ProcessQueueMessageDto(message.MessageId, message.MessageText));
+        _processQueueMessageCommandHandler.Handle(new ProcessQueueMessageCommandDto(message.MessageId, message.MessageText));
         _logger.LogInformation($"C# Queue trigger function processed: {message.MessageText}");
     }
 }
