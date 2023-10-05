@@ -5,5 +5,5 @@ namespace ProcessMonitor.Application.Contracts;
 
 public interface IGetConfigurationQueryHandler
 {
-    ConfigurationStore[] Handle(GetConfigurationDto request);
+    ConfigurationStore[] Handle(GetConfigurationQueryDto request);
 }

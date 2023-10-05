@@ -12,7 +12,7 @@ public class GetConfigurationQueryHandler : IGetConfigurationQueryHandler
         _connectionString = connectionString;
     }
 
-    public Domain.Entities.ConfigurationStore[] Handle(GetConfigurationDto request)
+    public Domain.Entities.ConfigurationStore[] Handle(GetConfigurationQueryDto request)
     {
         var tableClient = new TableClient(_connectionString.ConnectionString,
             MonitorConstants.MonitorConfigurationTableName);

@@ -1,8 +1,8 @@
 ﻿namespace ProcessMonitor.Application.Features.ConfigurationStore.Queries.GetConfiguration;
 
-public class GetConfigurationDto
+public class GetConfigurationQueryDto
 {
-    public GetConfigurationDto(string monitorTaskName)
+    public GetConfigurationQueryDto(string monitorTaskName)
     {
         MonitorTaskName = monitorTaskName;
     }
