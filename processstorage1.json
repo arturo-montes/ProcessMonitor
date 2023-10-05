@@ -1,0 +1,57 @@
+{
+    "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+    },
+    "kind": "StorageV2",
+    "id": "/subscriptions/73c0ac4d-0815-482e-94cd-d1ee6d022305/resourceGroups/SunocoProcessMonitor-RG/providers/Microsoft.Storage/storageAccounts/processtorage1",
+    "name": "processstorage1",
+    "type": "Microsoft.Storage/storageAccounts",
+    "location": "centralus",
+    "tags": {},
+    "properties": {
+        "keyCreationTime": {
+            "key1": "2023-10-05T18:39:22.8037189Z",
+            "key2": "2023-10-05T18:39:22.8037189Z"
+        },
+        "allowCrossTenantReplication": false,
+        "privateEndpointConnections": [],
+        "minimumTlsVersion": "TLS1_2",
+        "allowBlobPublicAccess": false,
+        "networkAcls": {
+            "bypass": "AzureServices",
+            "virtualNetworkRules": [],
+            "ipRules": [],
+            "defaultAction": "Allow"
+        },
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+            "services": {
+                "file": {
+                    "keyType": "Account",
+                    "enabled": true,
+                    "lastEnabledTime": "2023-10-05T18:39:22.8193410Z"
+                },
+                "blob": {
+                    "keyType": "Account",
+                    "enabled": true,
+                    "lastEnabledTime": "2023-10-05T18:39:22.8193410Z"
+                }
+            },
+            "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot",
+        "provisioningState": "Succeeded",
+        "creationTime": "2023-10-05T18:39:22.6630819Z",
+        "primaryEndpoints": {
+            "dfs": "https://processtorage1.dfs.core.windows.net/",
+            "web": "https://processtorage1.z19.web.core.windows.net/",
+            "blob": "https://processtorage1.blob.core.windows.net/",
+            "queue": "https://processtorage1.queue.core.windows.net/",
+            "table": "https://processtorage1.table.core.windows.net/",
+            "file": "https://processtorage1.file.core.windows.net/"
+        },
+        "primaryLocation": "centralus",
+        "statusOfPrimary": "available"
+    }
+}
